@@ -1,0 +1,8 @@
+Hostname: rpi4b
+Username: pi
+
+ssh pi@rpi4b
+
+sudo su
+
+apt update && apt upgrade -y
