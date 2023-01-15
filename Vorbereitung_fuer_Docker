@@ -1,0 +1,28 @@
+ping rpi4b
+ssh pi@rpi4b
+sudo su
+df -h
+blkid
+cfdisk
+  gpt
+  par size %MAX%
+  filesystem ext4
+ write
+ quit
+blkid
+mkdir /home/pi/container-ext
+mount /dev/sda1 /home/pi/container-ext/
+df -h
+crontab -e
+ @reboot mount /dev/sda1 /home/pi/container-ext/
+apt install docker.io -y
+apt install docker-compose -y
+usermod -aG docker $USER
+groups
+systemctl enable docker
+systemctl start docker
+docker ps
+
+
+
+  
